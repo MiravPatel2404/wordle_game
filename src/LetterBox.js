@@ -7,7 +7,7 @@ function LetterBox({ letter, status, isFlipped }) {
   useEffect(() => {
     if (isFlipped) {
       setIsAnimating(true);
-      setTimeout(() => setIsAnimating(false), 500); // Animation duration
+      setTimeout(() => setIsAnimating(false), 1000);
     }
   }, [isFlipped]);
 

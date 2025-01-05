@@ -2,7 +2,7 @@ import React from 'react';
 import LetterBox from './LetterBox';
 
 function Board({ guesses, currentGuess, targetWord }) {
-  const rows = Array.from({ length: 6 }, (_, rowIndex) => guesses[rowIndex] || currentGuess || '');
+  const rows = Array.from({ length: 6 }, (_, rowIndex) => guesses[rowIndex] || (rowIndex === guesses.length ? currentGuess : ''));
 
   return (
     <div className="board">

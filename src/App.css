@@ -75,6 +75,31 @@ body {
   background-color: #3a3a3c; /* Gray */
   border-color: #3a3a3c;
 }
+.game-over {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.game-over p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.game-over button {
+  background-color: #538d4e;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.game-over button:hover {
+  background-color: #437639;
+}
 
 /* Keyboard Styling */
 .keyboard {
