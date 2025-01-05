@@ -11,7 +11,6 @@ function App() {
   const [isGameWon, setIsGameWon] = useState(false);
   const [targetWord, setTargetWord] = useState('');
 
-  // Fetch a random 5-letter word from an API
   const fetchRandomWord = async () => {
     try {
       const response = await fetch('https://random-word-api.herokuapp.com/word?length=5');
@@ -19,7 +18,6 @@ function App() {
       setTargetWord(data[0].toUpperCase());
     } catch (error) {
       console.error('Error fetching random word:', error);
-      // Fallback to a local word list
       const fallbackWords = ['APPLE', 'CRISP', 'PLANT', 'ROBOT', 'LEVEL'];
       setTargetWord(fallbackWords[Math.floor(Math.random() * fallbackWords.length)]);
     }
@@ -35,11 +33,11 @@ function App() {
     setUsedKeys({});
     setIsGameOver(false);
     setIsGameWon(false);
-    fetchRandomWord(); // Fetch a new word for the new game
+    fetchRandomWord(); 
   };
 
   const handleKeyPress = (key) => {
-    if (isGameOver || isGameWon) return; // Prevent input if game is over
+    if (isGameOver || isGameWon) return;
 
     if (key === 'Enter' && currentGuess.length === 5) {
       const newGuesses = [...guesses, currentGuess];
@@ -88,7 +86,7 @@ function App() {
       )}
       {(isGameWon || isGameOver) && (
         <div className="game-over">
-          {isGameWon ? <p>🎉 You guessed the word correctly!</p> : <p>❌ Game Over! The word was: {targetWord}</p>}
+          {isGameWon ? <p>🎉 You guessed the word correctly!</p> : <p> Game Over! The word was: {targetWord}</p>}
           <button onClick={restartGame}>Restart Game</button>
         </div>
       )}
