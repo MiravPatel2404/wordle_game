@@ -75,7 +75,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Wordle Clone</h1>
+      <h1>Daily Wordle</h1>
       {targetWord ? (
         <>
           <Board guesses={guesses} currentGuess={currentGuess} targetWord={targetWord} />
